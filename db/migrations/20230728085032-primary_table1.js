@@ -1,4 +1,9 @@
 "use strict";
+/*Run command `$ npx sequelize db:migrate` (for migration)
+  `$ npx sequelize db:seed:all `(for seeder files) 
+  after creating migration and seeder files
+  Run command `$ npx sequelize db:migrate:undo:all ` to clear migration data
+*/
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -16,6 +21,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      rarity: { type: Sequelize.STRING, allowNull: false },
       variation: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -30,6 +36,7 @@ module.exports = {
       },
       class2: {
         type: Sequelize.STRING,
+        defaultValue: null,
         allowNull: true,
       },
       max_atk: {
@@ -56,6 +63,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      rarity:{type: Sequelize.STRING,
+        allowNull: false,},
       type: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -65,16 +74,18 @@ module.exports = {
         allowNull: false,
       },
       effects: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(500),
         allowNull: false,
       },
       specific_character: {
         type: Sequelize.STRING,
         allowNull: true,
+        defaultValue: null,
       },
       specific_effect: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(500),
         allowNull: true,
+        defaultValue: null,
       },
       created_at: {
         type: Sequelize.DATE,

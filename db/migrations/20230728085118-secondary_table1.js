@@ -30,24 +30,22 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      // character_atk: {
-      //   type: Sequelize.INTEGER,
-      //   allowNull: false,
-      //   references: {
-      //     model: "character",
-      //     key: "max_atk",
-      //   },
-      // },
+      
       effect: {
         type: Sequelize.STRING,
         allowNull: true,
+        defaultValue: null,
+      },
+      is_grapple:{
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
       },
       min_multiplier: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       max_multiplier: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       created_at: {
@@ -76,7 +74,7 @@ module.exports = {
       },
 
       passive: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(1000),
         allowNull: false,
       },
 

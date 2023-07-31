@@ -32,36 +32,17 @@ module.exports = {
           key: "id",
         },
       },
-      // character_atk: {
-      //   type: Sequelize.INTEGER,
-
-      //   references: {
-      //     model: "character",
-      //     key: "max_atk",
-      //   },
-      // },
-      // min_multi: {
-      //   type: Sequelize.INTEGER,
-      //   references: {
-      //     model: "specials",
-      //     key: "min_multiplier",
-      //   },
-      // },
-      // max_multi: {
-      //   type: Sequelize.INTEGER,
-      //   references: {
-      //     model: "specials",
-      //     key: "max_multiplier",
-      //   },
-      // },
+      
 
       min_damage: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        defaultValue:100,
       },
       max_damage: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        defaultValue:200,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -95,25 +76,7 @@ module.exports = {
           key: "id",
         },
       },
-      // equip1_eff: {
-      //   type: Sequelize.INTEGER,
-
-      //   references: {
-      //     model: "equipments",
-      //     key: "effects",
-      //   },
-      // },
-      // equip2_eff: {
-      //   type: Sequelize.INTEGER,
-      //   references: {
-      //     model: "equipments",
-      //     key: "effects",
-      //   },
-      // },
-      combo_eff: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
+      
 
       created_at: {
         type: Sequelize.DATE,
