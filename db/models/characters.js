@@ -1,6 +1,11 @@
 const { Model} = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Characters extends Model {}
+  class Characters extends Model {
+    static associate(models) {
+        this.hasMany(models.specials);
+        this.hasMany(models.special_Damage);
+    }
+  }
   Characters.init(
     {
       rarity: DataTypes.STRING,

@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   class Specials extends Model {
     static associate(models) {
       this.belongsTo(models.characters, { foreignKey: "charID" });
+      this.hasOne(models.special_Damage);
     }
   }
   Specials.init(
